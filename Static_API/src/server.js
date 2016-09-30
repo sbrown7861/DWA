@@ -17,3 +17,6 @@ app.listen(port,function(){
     console.log('Server is active on', port)
 });
 
+
+// Function to use the routes file.
+app.use('/api', require('../routes/api.js')(express));
