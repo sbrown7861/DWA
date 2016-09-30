@@ -12,5 +12,8 @@
     "url"
   ],
   "author": "Skyler Brown",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
