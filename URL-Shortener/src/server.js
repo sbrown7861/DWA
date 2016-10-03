@@ -1,18 +1,24 @@
 
 // API dependant packages to be required
 
-var express = require('express');
-var body_parser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
 
 
 
 // Instantiate "APP"
 
-var app = express();
+const app = express();
 
 //Configuration
 
-var port = 3000;
+const port = 3000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended : true
+}));
+
 
 // Function to make sure server is up and running.
 app.listen(port,function(){
@@ -21,4 +27,10 @@ app.listen(port,function(){
 
 
 // Function to use the routes file.
-app.use('/api/v1', require('routes/api.js')(express));
+app.use('/api/v1', require('./routes/api.js')(express));
+
+// Export server to be used elsewhere
+
+/*exports.server = app.listen(port, function(){
+    console.log('server is active on',port);
+});*/

@@ -1,7 +1,7 @@
 // Router setup to return routes.
 
 module.exports = function(express){
-    var router = express.Router();
+    const router = express.Router();
 
 
 

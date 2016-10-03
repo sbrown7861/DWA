@@ -1,14 +1,14 @@
 {
-  "name": "static_api",
+  "name": "URL-Shortener",
   "version": "1.0.0",
-  "description": "A static API to shorten urls",
+  "description": "A Dynamic API to shorten urls",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "API",
-    "static",
+    "Dynamic",
     "url"
   ],
   "author": "Skyler Brown",
