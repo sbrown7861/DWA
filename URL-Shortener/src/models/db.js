@@ -24,3 +24,19 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     logging: false
 
 });
+
+// new table to be added to the DB
+
+const urlTable = sequelize.define('urlTable',{
+    url:{
+        type: Sequelize.STRING
+    }
+
+});
+
+//Syncs to the DB
+
+sequelize.sync();
+
+exports.sequelize = sequelize;
+exports.urlTable = urlTable;

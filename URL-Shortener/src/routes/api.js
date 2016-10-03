@@ -34,6 +34,13 @@ module.exports = function(express){
     {res.json({url:makeURL()})});
 
 
+    router.post('/url', function(req, res){
+        url.create(req.body, function(err){
+            res.status(500).json(err)
+        },function(data){
+            res.status(200).json(data)
+        })
+    });
 
 
     return router;
