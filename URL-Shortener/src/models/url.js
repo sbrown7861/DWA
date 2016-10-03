@@ -5,20 +5,20 @@ const db = require('./db');
 
 // Create a url
 
-exports.create= function(payload, err, success){
-    db.urlTable.create(payload).then(success).catch(err);
+exports.create = function(payload, err, success){
+    db.url.create(payload).then(success).catch(err);
 };
 
 // Find all urls
 
 exports.findALL = function(err, success){
-    db.urlTable.findALL().then(success).catch(err)
+    db.url.findALL().then(success).catch(err)
 };
 
 // Find one URL
 
 exports.find= function(payload, err, success){
-    db.urlTable.find({
+    db.url.find({
         where: payload.id
       // Finds relations
     },
@@ -32,7 +32,7 @@ exports.find= function(payload, err, success){
 // Destroy URL
 
 exports.find= function(payload, err, success){
-    db.urlTable.find({
+    db.url.find({
             where: payload.id
             // Finds relations
         }).then(success).catch(err)

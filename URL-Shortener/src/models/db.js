@@ -1,18 +1,17 @@
 
-// Sequalize to run mysql with node
+// Sequelize to run mysql with node
 const Sequelize = require('sequelize');
 
 
 // dotenv to keep "business information" out of git.
-require('dotenv').config();
 
 // setting up new database connection with sequelize
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS,{
+const sequelize = new Sequelize('URL-Shortener', 'root', 'root',{
 
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_SCHEMA,
-    port: 3000,
+    host: '127.0.0.1',
+    dialect: 'mysql',
+    port: 8889,
     pool:{
         max: 5,
         min: 0,
@@ -27,10 +26,8 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 
 // new table to be added to the DB
 
-const urlTable = sequelize.define('urlTable',{
-    url:{
-        type: Sequelize.STRING
-    }
+const url = sequelize.define('url', {
+    url: Sequelize.STRING
 
 });
 
@@ -39,4 +36,4 @@ const urlTable = sequelize.define('urlTable',{
 sequelize.sync();
 
 exports.sequelize = sequelize;
-exports.urlTable = urlTable;
+exports.url = url;

@@ -1,3 +1,7 @@
+// bringing in URL to be manipulated.
+
+const url = require('../models/url.js');
+
 // Router setup to return routes.
 
 module.exports = function(express){
@@ -28,11 +32,16 @@ module.exports = function(express){
     }
 
 
+
+
 // Url route to return a JSON object with random text via makeURL function,
 
     router.get('/url', function(req, res)
     {res.json({url:makeURL()})});
 
+
+
+// Stores a new URL in the DB
 
     router.post('/url', function(req, res){
         url.create(req.body, function(err){
