@@ -9,8 +9,6 @@ module.exports = function(express){
 
 
 
-    // Function to randomly generate text
-
     function makeURL()
     {
 
@@ -32,23 +30,39 @@ module.exports = function(express){
     }
 
 
+// Returns all URL
+
+    router.get('/url', function(req,res){
+        url.findALL(function(err){
+            res.status(500).json(err);
+        },function(data){
+            res.status(200).json(data);
+        })
+    });
 
 
-// Url route to return a JSON object with random text via makeURL function,
+// Returns a single url
 
-    router.get('/url', function(req, res)
-    {res.json({url:makeURL()})});
+
+    router.get('/url/:id', function(req, res){
+        req.body.id = req.params.id;
+        url.findALL(function(err){
+            res.status(500).json(err);
+        },function(data){
+            res.status(200).json(data);
+        })
+    });
 
 
 
 // Stores a new URL in the DB
 
     router.post('/url', function(req, res){
-        url.create(req.body, function(err){
+        url.create(res.json({url:makeURL()})), function(err){
             res.status(500).json(err)
         },function(data){
             res.status(200).json(data)
-        })
+        }
     });
 
 
