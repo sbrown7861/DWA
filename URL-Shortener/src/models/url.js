@@ -11,29 +11,44 @@ exports.create = function(payload, err, success){
 
 // Find all urls
 
-exports.findALL = function(err, success){
-    db.url.findALL().then(success).catch(err)
+exports.findAll = function(err, success){
+    db.url.findAll().then(success).catch(err);
 };
 
 // Find one URL
 
-exports.find= function(payload, err, success){
+exports.find = function(payload, err, success) {
     db.url.find({
-        where: payload.id
-      // Finds relations
-    },
-        include[{
+
+        where: {
+            id: payload.id
+        },
+        include: [{
             all: true,
             nested: true
         }]
-    ).then(success).catch(err)
+
+    }).then(success).catch(err);
 };
 
 // Destroy URL
 
-exports.find= function(payload, err, success){
+exports.destroy= function(payload, err, success){
+    db.url.destroy({
+            where: {
+                id: payload.id
+            }
+        }).then(success).catch(err);
+};
+
+// Updates a URL
+exports.update = function(payload, err, success){
     db.url.find({
-            where: payload.id
-            // Finds relations
-        }).then(success).catch(err)
+            where: {
+                id: payload.id
+            }
+
+        }).then(function(existingData){
+        existingData.updateAttributes(payload).then(success).catch(err);
+    }).catch(err);
 };

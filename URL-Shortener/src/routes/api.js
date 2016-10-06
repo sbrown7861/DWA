@@ -32,11 +32,11 @@ module.exports = function(express){
 
 // Returns all URL
 
-    router.get('/url', function(req,res){
-        url.findALL(function(err){
-            res.status(500).json(err);
+    router.get('/url', function(req, res){
+        url.findAll(function(err){
+            res.status(500).json(err)
         },function(data){
-            res.status(200).json(data);
+            res.status(200).json(data)
         })
     });
 
@@ -46,10 +46,10 @@ module.exports = function(express){
 
     router.get('/url/:id', function(req, res){
         req.body.id = req.params.id;
-        url.findALL(function(err){
-            res.status(500).json(err);
+        url.find(req.body, function(err){
+            res.status(500).json(err)
         },function(data){
-            res.status(200).json(data);
+            res.status(200).json(data)
         })
     });
 
@@ -58,12 +58,40 @@ module.exports = function(express){
 // Stores a new URL in the DB
 
     router.post('/url', function(req, res){
-        url.create(res.json({url:makeURL()})), function(err){
+        url.create(req.body, function(err){
             res.status(500).json(err)
         },function(data){
             res.status(200).json(data)
-        }
+        })
     });
+
+// Updates a URL
+
+
+    router.post('/url/:id', function(req, res){
+        req.body.id = req.params.id;
+        url.update(req.body, function(err){
+            res.status(500).json(err)
+        },function(data){
+            res.status(200).json(data)
+        })
+    });
+
+
+
+
+// Destroys a URL
+
+
+    router.delete('/url/:id', function(req, res){
+        req.body.id = req.params.id;
+        url.destroy(req.body, function(err){
+            res.status(500).json(err)
+        },function(data){
+            res.status(200).json(data)
+        })
+    });
+
 
 
     return router;
