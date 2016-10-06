@@ -32,7 +32,7 @@ module.exports = function(express){
 
 // Returns all URL
 
-    router.get('/url', function(req, res){
+    router.get('/urls', function(req, res){
         url.findAll(function(err){
             res.status(500).json(err)
         },function(data){

@@ -7,12 +7,30 @@ Required packages for this are....
 
 "express": "^4.14.0"
 
+ "mysql": "^2.11.1",
 
+ "sequelize": "^3.24.3"
 
 
 Endpoints are...
 
-/api/v1/url
+POST: /api/v1/url
+Create a shortened URL
+
+GET: /api/v1/urls
+Display all URLS
+
+GET: /api/v1/url/:id
+Display URL based upon id
+
+POST: /api/v1/url/:id
+Update URL based upon id
+
+DELETE:  /api/v1/url/:id
+Delete url based upon id
+
+
+
 
 Examples of JSON outputs are...
 
