@@ -34,27 +34,23 @@ const white = '\x1b[37m';
 
 
 
-
-if(process.env.DEBUG = true){
+if(process.env.DEBUG = true) {
 
 //Used to write a file stream for logs
-var fs = require('fs');
+    var fs = require('fs');
 
 // To create a new Console to be used with logger
 
-const Console = console.Console;
+    const Console = console.Console;
 
 
-var output = fs.createWriteStream('logs.txt');
+    var output = fs.createWriteStream('logs.txt');
 
 // Main logging function
 
-const logger = new Console(output);
-
-    exports.success =  logger.log(green,'This was a successful action, no need to worry');
-    exports.err = logger.log(yellow, 'An error has occurred please check for issues');
-
-
+  debug = Console(output);
 
 }
+
+exports.debug = debug;
 

@@ -3,7 +3,7 @@
 
 const db = require('./db');
 
-const debug = require('../tools/debug');
+const debugTool = require('../tools/debug');
 
 // Create a url
 
@@ -14,7 +14,20 @@ exports.create = function(payload, err, success){
 // Find all urls
 
 exports.findAll = function(err, success){
-    db.url.findAll().then(debug.success).catch(err);
+    db.url.findAll().then(success).catch(err);
+
+    if(success){
+
+        debug.log('The find all request for the url model was successful')
+
+    }if(err){
+
+        debug.log('There was an error during the findAll request')
+
+    }else{
+
+        debug.log('There was an issue with your request this is a warning please look into the findAll function')
+    }
 };
 
 // Find one URL
