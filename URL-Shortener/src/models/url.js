@@ -20,11 +20,11 @@ exports.findAll = function(err, success){
 
     if(success){
 
-        debug.log('The find all request for the url model was successful')
+        debug.log('The find all request for the url model was successful. Route: /urls')
 
     }else{
 
-        debug.log('There was an issue with your request this is a warning please look into the findAll function')
+        debug.log('There was an issue with your request this is a warning please look into the findAll function. Route: /urls')
     }
 };
 
@@ -47,11 +47,11 @@ exports.find = function(payload, err, success) {
 
     if(success){
 
-        debug.log('The find  request for the url model was successful')
+        debug.log('The find  request for the url model was successful. Route: /url/id')
 
     }else{
 
-        debug.log('There was an issue with your request this is a warning please look into the find function')
+        debug.log('There was an issue with your request this is a warning please look into the find function Route: /url/id')
     }
 };
 
@@ -68,11 +68,11 @@ exports.destroy= function(payload, err, success){
 
     if(success){
 
-        debug.log('The destroy request for the url model was successful')
+        debug.log('The destroy request for the url model was successful Route: /url/id')
 
     }else{
 
-        debug.log('There was an issue with your request this is a warning please look into the destroy function')
+        debug.log('There was an issue with your request this is a warning please look into the destroy function. Route: /url/id')
     }
 };
 
@@ -91,10 +91,10 @@ exports.update = function(payload, err, success){
 
     if(success){
 
-        debug.log('The update request for the url model was successful')
+        debug.log('The update request for the url model was successful. Route: /url/id')
 
     }else{
 
-        debug.log('There was an issue with your request this is a warning please look into the update function of the url model')
+        debug.log('There was an issue with your request this is a warning please look into the update function of the url model. Route: /url/id')
     }
 };

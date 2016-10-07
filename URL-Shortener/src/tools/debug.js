@@ -1,17 +1,6 @@
-require('dotenv').config();
+// needs dotenv to test if debug is true in order to run
 
-/*
-* Color escape codes for terminal
-* 30 - Black
- 31 - Red
- 32 - Green
- 33 - Yellow
- 34 - Blue
- 35 - Magenta
- 36 - Cyan
- 37 - White
-*
-* */
+require('dotenv').config();
 
 
 // Color codes for terminal window.
@@ -33,24 +22,26 @@ const cyan = '\x1b[36m';
 const white = '\x1b[37m';
 
 
-
+// Checks .env to see if debug is true
 if(process.env.DEBUG = true) {
 
 //Used to write a file stream for logs
     var fs = require('fs');
 
-// To create a new Console to be used with logger
+// To create a new Console to be used with debug
 
     const Console = console.Console;
 
 
     var output = fs.createWriteStream('logs.txt');
 
-// Main logging function
+// Main logging function to be used on other pages.
 
   debug = Console(output);
 
 }
+
+// Exports to be used on other pages.
 
 exports.debug = debug;
 

@@ -39,3 +39,8 @@ Examples of JSON outputs are...
 {"url":"ov3xx"}
 
 {"url":"04d75"}
+
+*******Debugging Usage********
+
+When the .env variable DEBUG=true, logs for http requests will be stored in the logs.txt file to be reviewed.
+If DEBUG=false messages will not be saved or written.
