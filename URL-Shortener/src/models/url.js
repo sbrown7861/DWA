@@ -3,6 +3,8 @@
 
 const db = require('./db');
 
+const debug = require('../tools/debug');
+
 // Create a url
 
 exports.create = function(payload, err, success){
@@ -12,7 +14,7 @@ exports.create = function(payload, err, success){
 // Find all urls
 
 exports.findAll = function(err, success){
-    db.url.findAll().then(success).catch(err);
+    db.url.findAll().then(debug.success).catch(err);
 };
 
 // Find one URL
