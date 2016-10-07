@@ -2,7 +2,7 @@
 
 const url = require('../models/url.js');
 
-//const debugTool = require('../tools/debug');
+const debugTool = require('../tools/debug');
 
 // Router setup to return routes.
 
