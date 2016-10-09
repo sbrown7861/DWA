@@ -8,14 +8,14 @@ require('dotenv').config();
 
 if (process.env.DEBUG = true) {
 // Used to write a file stream for logs
-    const fs = require('fs');
+  const fs = require('fs');
 
 // To create a new Console to be used with debug
 
- Console = console.Console;
+  Console = console.Console;
 
 
- const output = fs.createWriteStream('logs.txt');
+  const output = fs.createWriteStream('logs.txt');
 
 // Main logging function to be used on other pages.
 
