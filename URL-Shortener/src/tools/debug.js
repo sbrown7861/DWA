@@ -3,24 +3,25 @@
 
 require('dotenv').config();
 
+
 // Checks .env to see if debug is true
 
-if (process.env.DEBUG === true) {
+if (process.env.DEBUG = true) {
 // Used to write a file stream for logs
-  const fs = require('fs');
+    const fs = require('fs');
 
 // To create a new Console to be used with debug
 
-  const Console = console.Console;
+ Console = console.Console;
 
 
-  const output = fs.createWriteStream('logs.txt');
-
-    // Exports to be used on other pages.
-
-  exports.debug = debug;
-
+ const output = fs.createWriteStream('logs.txt');
 
 // Main logging function to be used on other pages.
-  debug = Console(output)}
+
+  debug = Console(output);
+}
+// Exports to be used on other pages.
+
+exports.debug = debug;
 
