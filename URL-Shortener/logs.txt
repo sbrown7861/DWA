@@ -1,0 +1,3 @@
+The find  request for the url model was successful. Route: /url/id
+The find  request for the url model was successful. Route: /url/id
+The find all request for the url model was successful. Route: /urls

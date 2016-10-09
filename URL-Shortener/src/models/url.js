@@ -3,7 +3,9 @@
 
 const db = require('./db');
 
-const debug = require('../tools/debug');
+// Unused constant necessary to use the debug functionality
+
+const debugTool = require('../tools/debug');
 
 // Create a url
 
