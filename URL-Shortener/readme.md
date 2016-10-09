@@ -1,6 +1,8 @@
 ********************DOCUMENTATION************************
 
 
+********************Installation*************************
+
 Required packages for this are....
 
 "body-parser": "^1.15.2",
@@ -11,6 +13,8 @@ Required packages for this are....
 
  "sequelize": "^3.24.3"
 
+
+********************API ENDPOINTS***********************
 
 Endpoints are...
 
@@ -30,7 +34,7 @@ DELETE:  /api/v1/url/:id
 Delete url based upon id
 
 
-
+********************EXAMPLE OUTPUTS********************
 
 Examples of JSON outputs are...
 
@@ -40,7 +44,18 @@ Examples of JSON outputs are...
 
 {"url":"04d75"}
 
-*******Debugging Usage********
+*******************DEBBUGING USAGE*********************
 
 When the .env variable DEBUG=true, logs for http requests will be stored in the logs.txt file to be reviewed.
 If DEBUG=false messages will not be saved or written.
+
+
+
+*****************STYLE GUIDE DOCUMENTATION*************
+
+The style guide used for this project was the Airbnb JavaScript Style Guide which was enforced using ESLint.
+
+Here a link to the documentation for the styleguide.
+
+https://github.com/airbnb/javascript
+
