@@ -59,3 +59,14 @@ Here a link to the documentation for the styleguide.
 
 https://github.com/airbnb/javascript
 
+*******************Workflow***************************
+
+In order to add a new feature the master branch needs a new working branch.
+
+Once the working branch is complete push this branch to the master branch in order
+This branch will then be pushed to the release branch where a new version will be released.
+
+*******************Deployment**************************
+
+Once a new feature is pushed to the release branch heroku will use the deployment pipeline to test with codeship
+and then have GitHub create a new tagged release.
