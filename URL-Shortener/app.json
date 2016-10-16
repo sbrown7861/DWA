@@ -1,0 +1,6 @@
+{
+  "name": "URL-Shortener",
+  "description": "A Node.js app to shorten and store urls.",
+  "repository": "https://github.com/sbrown7861/DWA.git",
+  "keywords": ["node", "express", "dynamic"]
+}
