@@ -26,7 +26,7 @@ app.listen(port,function(){
 
 
 // Function to use the routes file.
-app.use('/api/v1', require('./routes/api.js')(express));
+app.use('/api/v1', require('./src/routes/api.js')(express));
 
 // Export server to be used elsewhere
 
